@@ -1,0 +1,5 @@
+Vill göra Breakout eller pong har inte bsetämmt mig en.
+
+Mitt upplägg komemr vara:
+1.  Börjar med grov sakerna, dvs det som jag först kommer på att jag behöver i spelet.
+För att senare under projektets gång utveckla olika föremål. 
