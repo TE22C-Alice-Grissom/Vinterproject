@@ -1,5 +1,11 @@
 Vill göra Breakout eller pong har inte bsetämmt mig en.
 
 Mitt upplägg komemr vara:
-1.  Börjar med grov sakerna, dvs det som jag först kommer på att jag behöver i spelet.
+1.  Börja med att instalera Raylib (insåg att jag måste ha det)
+2. Fixa mitt fönster
+3. sedan lägga till min platta och bollen.
+
+
+
+OM jag har tid så kan jag börja med grov sakerna, dvs det som jag först kommer på att jag behöver i spelet.
 För att senare under projektets gång utveckla olika föremål. 

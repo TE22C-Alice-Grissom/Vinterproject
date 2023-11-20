@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fZ55KKhCo5WQAHk8Q/vZFIhFM1m2XWqr97yj1MReg+U5loEQBUehJ0WqKBle0V/9oSbHbxwo0yMl0UrQW8PQWg==",
+  "dgSpecHash": "wko5px1orc9WwNbXTNSmuysnuIo7+wx4umenbmiqXJzXMVn1TAUiViNECSql0gku1fSQPO9Srs7bhpKwFai/jA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alice.grissom\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
+    "C:\\Users\\alice.grissom\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
