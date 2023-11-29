@@ -11,11 +11,9 @@ Raylib.SetTargetFPS(60);
 
 Color ljusBlå = new Color(0, 191, 255, 255);
 Rectangle plattaRec = new Rectangle(400 - 75, 350, 150, 20);
-
-Vector2 boll = new Vector2(400, 335);
-
-
+Vector2 bollPosition = new Vector2(400, 335);
 Vector2 movement = new Vector2(0, 0);
+Vector2 bollmovment = new Vector2(2,2);
 
 
 List<Rectangle> block = new();
@@ -31,7 +29,7 @@ while (!Raylib.WindowShouldClose())
     Raylib.ClearBackground(Color.WHITE);
 
     Raylib.DrawRectangleRec(plattaRec, ljusBlå);
-    Raylib.DrawCircleV(boll, 10, Color.BLACK);
+    Raylib.DrawCircleV(bollPosition, 10, Color.BLACK);
 
     Raylib.EndDrawing();
 
@@ -56,8 +54,23 @@ while (!Raylib.WindowShouldClose())
         {
             movement.X = 1;
         }
-
+        
+        
         plattaRec.X += movement.X;
+
+        bollPosition += bollmovment;
+
+        if(bollPosition >
+         600)
+        {
+
+        }
+
+
+
+        // bollmovment.Y = -bollmovment.Y;
+
+        
 
     }
 
