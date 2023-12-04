@@ -17,3 +17,6 @@ Tisdagen den 21 november så försökte jag jobba utanför lektions tiden, men j
 Även när jag bad mina kompisar om hjälp så förstod inte dem heller varför det inte fungerade.
 
 Måndag 27 fixade min rectangel äntligen och fixa lite speed osv 
+
+Måndag den 4 december så fixade jag att bollen stutsar mot väggarna och inte åker runt ut i toma intet.
+Sedan så fixade jag även så att plattan åker snabbare

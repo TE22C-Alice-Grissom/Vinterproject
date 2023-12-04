@@ -37,15 +37,6 @@ while (!Raylib.WindowShouldClose())
     {
         movement = Vector2.Zero;
 
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_UP))
-        {
-            movement.Y = -1;
-        }
-        else if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
-        {
-            movement.Y = 1;
-        }
-
         if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
         {
             movement.X = -1;
@@ -55,17 +46,23 @@ while (!Raylib.WindowShouldClose())
             movement.X = 1;
         }
         
-        
-        plattaRec.X += movement.X;
-
+        plattaRec.X += movement.X * 5;
         bollPosition += bollmovment;
 
-        if(bollPosition >
-         600)
+        if(bollPosition.Y > 600 || bollPosition.Y < 0)
         {
-
+            bollmovment.Y = -bollmovment.Y;
+        }
+        else if(bollPosition.X > 800 || bollPosition.X < 0)
+        {
+            bollmovment.X = -bollmovment.X;
         }
 
+        if(Raylib.CheckCollisionCircleRec(bollPosition, 2, plattaRec))
+        {
+            Console.WriteLine();
+        }
+    
 
 
         // bollmovment.Y = -bollmovment.Y;
