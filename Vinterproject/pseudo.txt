@@ -20,3 +20,5 @@ Måndag 27 fixade min rectangel äntligen och fixa lite speed osv
 
 Måndag den 4 december så fixade jag att bollen stutsar mot väggarna och inte åker runt ut i toma intet.
 Sedan så fixade jag även så att plattan åker snabbare
+
+Onsdag den 6 december så fixade jag så att min platta inte kan åka utanför ramen.

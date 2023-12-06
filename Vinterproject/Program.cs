@@ -47,6 +47,15 @@ while (!Raylib.WindowShouldClose())
         }
         
         plattaRec.X += movement.X * 5;
+
+        if (plattaRec.X < 0 || plattaRec.X > 650)
+        {
+            plattaRec.X -= movement.X * 5;
+        }
+
+
+
+
         bollPosition += bollmovment;
 
         if(bollPosition.Y > 600 || bollPosition.Y < 0)
@@ -62,11 +71,7 @@ while (!Raylib.WindowShouldClose())
         {
             Console.WriteLine();
         }
-    
-
-
-        // bollmovment.Y = -bollmovment.Y;
-
+     
         
 
     }
