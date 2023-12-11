@@ -69,7 +69,7 @@ while (!Raylib.WindowShouldClose())
 
         if(Raylib.CheckCollisionCircleRec(bollPosition, 2, plattaRec))
         {
-            Console.WriteLine();
+            bollmovment.Y = -bollmovment.Y;
         }
      
         
@@ -88,20 +88,9 @@ while (!Raylib.WindowShouldClose())
 // Rectangle plattanRec = new Rectangle(760, 20, 32, 32);
 
 
-
-
-
-
 //Raylib.DrawCirle(100, 100, 100, Color.White);
 
-
-
-
-
 //List<Rectangle> rects = new List<Rectangle>();
-
-
-
 
 
 
