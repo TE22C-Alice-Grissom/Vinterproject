@@ -22,3 +22,6 @@ Måndag den 4 december så fixade jag att bollen stutsar mot väggarna och inte 
 Sedan så fixade jag även så att plattan åker snabbare
 
 Onsdag den 6 december så fixade jag så att min platta inte kan åka utanför ramen.
+
+Mångag den 18 december jag har varit lat och omotiverad som bleep för att det har varit så himla mycket i skolan.
+Men nu fixade jag så att när bpllen nuder kanten längst ner så blir det game over 

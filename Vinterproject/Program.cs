@@ -27,7 +27,6 @@ while (!Raylib.WindowShouldClose())
 {
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.WHITE);
-    Raylib.EndDrawing();
 
     if (scene == "game")
     {
@@ -71,12 +70,15 @@ while (!Raylib.WindowShouldClose())
         if (bollPosition.Y > 600)
         {
             scene = "Game over";
-            Console.WriteLine("GAME OVER");
-            Console.ReadLine();
         }
-    
+        
+    }
+    else if (scene == "Game over")
+    {
+        Raylib.DrawText("GAME OVER", 250, 280, 50, Color.RED);
     }
 
+    Raylib.EndDrawing();
 
 }
 
