@@ -18,9 +18,6 @@ Vector2 bollmovment = new Vector2(2, 2);
 
 List<Rectangle> block = new();
 
-
-float speed = 5;
-
 string scene = "game";
 
 while (!Raylib.WindowShouldClose())
@@ -30,22 +27,22 @@ while (!Raylib.WindowShouldClose())
 
     if (scene == "game")
     {
-        movement = Vector2.Zero;
+        movement = Vector2.Zero;  //all movement börjar på 0 eneheter 
         Raylib.DrawRectangleRec(plattaRec, ljusBlå);
         Raylib.DrawCircleV(bollPosition, 10, Color.BLACK);
 
         if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
         {
-            movement.X = -1;
+            movement.X = -1;                    //Gör så att plattan kan åka åt vänster eftersom det blir mindre o mindre siffror åt vänster håll
         }
         else if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
         {
-            movement.X = 1;
+            movement.X = 1;                             //motsattsen till left key
         }
 
         plattaRec.X += movement.X * 5;
 
-        if (plattaRec.X < 0 || plattaRec.X > 650)
+        if (plattaRec.X < 0 || plattaRec.X > 650) // Gör så att plattan icke kan åka utanför fönster och då gångar värde med inversen? vet inte om de är rätt ord
         {
             plattaRec.X -= movement.X * 5;
         }
@@ -53,16 +50,16 @@ while (!Raylib.WindowShouldClose())
 
         bollPosition += bollmovment;
 
-        if (bollPosition.Y > 600 || bollPosition.Y < 0)
+        if (bollPosition.Y > 600 || bollPosition.Y < 0) //kollar kollision
         {
             bollmovment.Y = -bollmovment.Y;
         }
-        else if (bollPosition.X > 800 || bollPosition.X < 0)
+        else if (bollPosition.X > 800 || bollPosition.X < 0) //kollar kollison
         {
-            bollmovment.X = -bollmovment.X;
+            bollmovment.X = -bollmovment.X; //hastigheten gångras med -1 som gör att man upplever illusionen att den studsar
         }
 
-        if (Raylib.CheckCollisionCircleRec(bollPosition, 2, plattaRec))
+        if (Raylib.CheckCollisionCircleRec(bollPosition, 10, plattaRec))
         {
             bollmovment.Y = -bollmovment.Y;
         }
