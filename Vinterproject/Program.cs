@@ -15,8 +15,19 @@ Vector2 movement = new Vector2(0, 0);
 Vector2 bollmovment = new Vector2(2, 2);
 
 List<Rectangle> blocks = new List<Rectangle>();
-blocks.Add(new Rectangle(325,100,100,25));
-blocks.Add(new Rectangle(325,150,100,25));
+
+for (int x = 0; x <= 7; x++)
+{
+    blocks.Add(new Rectangle(10+x*110,10,100,25));
+}
+
+for (int i = 0; i <= 7; i++)
+{
+    blocks.Add(new Rectangle(10+i*110,45,100,25));
+}
+//blocks.Add(new Rectangle(10,10,100,25));
+//blocks.Add(new Rectangle(120,10,100,25));
+//blocks.Add(new Rectangle(230,10,100,25));
 
 
 string scene = "game";
@@ -63,10 +74,11 @@ while (!Raylib.WindowShouldClose())
         }
 
 
+
         foreach (Rectangle block in blocks)
         {
-            Raylib.DrawRectangleRec(blocks[0], Color.DARKBLUE);
-            Raylib.DrawRectangleRec(blocks[1], Color.DARKBLUE); 
+            Raylib.DrawRectangleRec(block, Color.DARKBLUE);
+            //Raylib.DrawRectangleRec(blocks[1], Color.DARKBLUE); 
         }
 
 
