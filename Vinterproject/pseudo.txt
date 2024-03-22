@@ -5,7 +5,7 @@ Mitt upplägg komemr vara:
 2. Fixa mitt fönster
 3. sedan lägga till min platta och bollen.
 
-
+life = heltal 3
 
 OM jag har tid så kan jag börja med grov sakerna, dvs det som jag först kommer på att jag behöver i spelet.
 För att senare under projektets gång utveckla olika föremål. 

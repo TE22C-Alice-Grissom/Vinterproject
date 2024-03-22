@@ -9,36 +9,47 @@ Raylib.SetTargetFPS(60);
 
 
 Color lightblue = new Color(0, 191, 255, 255);
-Rectangle boardRec = new Rectangle(400 - 75, 350, 150, 20);
+Rectangle boardRec = new Rectangle(325, 350, 150, 20);
 Vector2 bollPosition = new Vector2(400, 335);
 Vector2 movement = new Vector2(0, 0);
 Vector2 bollmovment = new Vector2(2, 2);
 
 List<Rectangle> blocks = new List<Rectangle>();
 
-for (int x = 0; x <= 7; x++)
-{
-    blocks.Add(new Rectangle(10+x*110,10,100,25));
-}
-
-for (int i = 0; i <= 7; i++)
-{
-    blocks.Add(new Rectangle(10+i*110,45,100,25));
-}
-//blocks.Add(new Rectangle(10,10,100,25));
-//blocks.Add(new Rectangle(120,10,100,25));
-//blocks.Add(new Rectangle(230,10,100,25));
-
-
 string scene = "game";
+int life = 3;
+
+blocks = skapaRektanglar(blocks);
+
+static List<Rectangle> skapaRektanglar(List<Rectangle>blocks){
+    for (int i = 0; i <= 1; i++)
+    {
+        for (int j = 0; j < 7; j++)
+        {
+            blocks.Add(new Rectangle(10+j*110,30*i+10,100,25));
+        }
+    }
+    return blocks;
+}
+
+static void lifeDiplay(int l){                      //  Display life left
+    string display = "Life: "+l.ToString();
+    Raylib.DrawText(display, 20, 20, 20, Color.RED);
+}   
 
 while (!Raylib.WindowShouldClose())
 {
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.WHITE);
 
-    if (scene == "game")
+    if (life == 0)
     {
+        Raylib.DrawText("GAME OVER", 250, 280, 50, Color.RED);
+    }
+    else if (scene == "game")
+    {
+        Raylib.DrawText("Press Left to move platform left", (int)250.0, 280, 20, Color.RED);//type conversion
+        Raylib.DrawText("Press Right to move plstform right", 250, 300, 20, Color.RED);
         movement = Vector2.Zero;  //all movement starts at 0 units. 
         Raylib.DrawRectangleRec(boardRec, lightblue);
         Raylib.DrawCircleV(bollPosition, 10, Color.BLACK);
@@ -63,29 +74,45 @@ while (!Raylib.WindowShouldClose())
             bollmovment.X = -bollmovment.X; //hastigheten gångras med -1 som gör att man upplever illusionen att den studsar
         }
 
-        if (Raylib.CheckCollisionCircleRec(bollPosition, 10, boardRec))
+        if (Raylib.CheckCollisionCircleRec(bollPosition, 10, boardRec))//Edge collision check
         {
             bollmovment.Y = -bollmovment.Y;
         }
 
-        if (bollPosition.Y > 600)
+        foreach (var item in blocks)// Check collision with rectangles, remove if collided
         {
-            scene = "Game over";
+            if (Raylib.CheckCollisionCircleRec(bollPosition, 10, item))
+            {
+                bollmovment.Y = -bollmovment.Y;
+                blocks.Remove(item);
+                break;
+            }
+        }
+
+        if (blocks.Count==0){//Win condition
+            scene = "Win";
+        }
+        
+
+        if (bollPosition.Y > 600)//Lose condition
+        {
+            life -= 1;
         }
 
 
 
-        foreach (Rectangle block in blocks)
+        foreach (Rectangle block in blocks)//render rectangles
         {
             Raylib.DrawRectangleRec(block, Color.DARKBLUE);
             //Raylib.DrawRectangleRec(blocks[1], Color.DARKBLUE); 
         }
+        lifeDiplay(life);
 
 
     }
-    else if (scene == "Game over")
+    else if (scene == "Win")
     {
-        Raylib.DrawText("GAME OVER", 250, 280, 50, Color.RED);
+        Raylib.DrawText("YOU WON!", 250, 280, 50, Color.RED);   
     }
 
     Raylib.EndDrawing();
@@ -100,7 +127,7 @@ static Vector2 Movement(Vector2 movement)
     }
     else if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
     {
-        movement.X = 1;                             //motsattsen till left key
+        movement.X = 1;                     //motsattsen till left key
     }
 
     return movement;
