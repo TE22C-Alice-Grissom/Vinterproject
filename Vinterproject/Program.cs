@@ -21,7 +21,8 @@ int life = 3;
 
 blocks = skapaRektanglar(blocks);
 
-static List<Rectangle> skapaRektanglar(List<Rectangle>blocks){
+static List<Rectangle> skapaRektanglar(List<Rectangle>blocks)
+{
     for (int i = 0; i <= 1; i++)
     {
         for (int j = 0; j < 7; j++)
@@ -32,7 +33,8 @@ static List<Rectangle> skapaRektanglar(List<Rectangle>blocks){
     return blocks;
 }
 
-static void lifeDiplay(int l){                      //  Display life left
+static void lifeDisplay(int l) //  Display för liv är i vänster hörna och start värdet 'r 3
+{                      
     string display = "Life: "+l.ToString();
     Raylib.DrawText(display, 20, 20, 20, Color.RED);
 }   
@@ -50,14 +52,14 @@ while (!Raylib.WindowShouldClose())
     {
         Raylib.DrawText("Press Left to move platform left", (int)250.0, 280, 20, Color.RED);//type conversion
         Raylib.DrawText("Press Right to move plstform right", 250, 300, 20, Color.RED);
-        movement = Vector2.Zero;  //all movement starts at 0 units. 
+        movement = Vector2.Zero;  //all movement börjar på 0 . 
         Raylib.DrawRectangleRec(boardRec, lightblue);
         Raylib.DrawCircleV(bollPosition, 10, Color.BLACK);
         movement = Movement(movement);
 
         boardRec.X += movement.X * 5;
 
-        if (boardRec.X < 0 || boardRec.X > 650) // Ensures that the plate cannot go outside the window.
+        if (boardRec.X < 0 || boardRec.X > 650) //Gör så att plattan inte kan gå utanfört rutan.
         {
             boardRec.X -= movement.X * 5;
         }
@@ -65,21 +67,21 @@ while (!Raylib.WindowShouldClose())
 
         bollPosition += bollmovment;
 
-        if (bollPosition.Y > 600 || bollPosition.Y < 0) //checking collision
+        if (bollPosition.Y > 600 || bollPosition.Y < 0) //kollar collision
         {
             bollmovment.Y = -bollmovment.Y;
         }
-        else if (bollPosition.X > 800 || bollPosition.X < 0) //checking collision
+        else if (bollPosition.X > 800 || bollPosition.X < 0) //kollar collision
         {
             bollmovment.X = -bollmovment.X; //hastigheten gångras med -1 som gör att man upplever illusionen att den studsar
         }
 
-        if (Raylib.CheckCollisionCircleRec(bollPosition, 10, boardRec))//Edge collision check
+        if (Raylib.CheckCollisionCircleRec(bollPosition, 10, boardRec)) //kollar kollision med kanten.heck
         {
             bollmovment.Y = -bollmovment.Y;
         }
 
-        foreach (var item in blocks)// Check collision with rectangles, remove if collided
+        foreach (var item in blocks)//kollar kollision med "item" akarectanglarna, om det sker så försvinner just den.
         {
             if (Raylib.CheckCollisionCircleRec(bollPosition, 10, item))
             {
@@ -89,12 +91,12 @@ while (!Raylib.WindowShouldClose())
             }
         }
 
-        if (blocks.Count==0){//Win condition
+        if (blocks.Count==0){ //om alla block försvinner så går det över till "Win" scenen
             scene = "Win";
         }
         
 
-        if (bollPosition.Y > 600)//Lose condition
+        if (bollPosition.Y > 600)  //tappar ett liv
         {
             life -= 1;
         }
@@ -103,10 +105,9 @@ while (!Raylib.WindowShouldClose())
 
         foreach (Rectangle block in blocks)//render rectangles
         {
-            Raylib.DrawRectangleRec(block, Color.DARKBLUE);
-            //Raylib.DrawRectangleRec(blocks[1], Color.DARKBLUE); 
+            Raylib.DrawRectangleRec(block, Color.DARKBLUE); 
         }
-        lifeDiplay(life);
+        lifeDisplay(life);
 
 
     }
