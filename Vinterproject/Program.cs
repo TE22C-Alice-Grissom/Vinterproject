@@ -14,7 +14,7 @@ Vector2 bollPosition = new Vector2(400, 335);
 Vector2 movement = new Vector2(0, 0);
 Vector2 bollmovment = new Vector2(2, 2);
 
-List<Rectangle> blocks = new List<Rectangle>();
+List<Rectangle> blocks = new List<Rectangle>(); //skapaar en lista som innehåller rektanglar och döper den listan till blocks
 
 string scene = "game";
 int life = 3;
@@ -50,7 +50,7 @@ while (!Raylib.WindowShouldClose())
     }
     else if (scene == "game")
     {
-        Raylib.DrawText("Press Left to move platform left", (int)250.0, 280, 20, Color.RED);//type conversion
+        Raylib.DrawText("Press Left to move platform left", (int)250.0, 280, 20, Color.RED); //type conversion den gör om 250.0 till ett heltal 
         Raylib.DrawText("Press Right to move plstform right", 250, 300, 20, Color.RED);
         movement = Vector2.Zero;  //all movement börjar på 0 . 
         Raylib.DrawRectangleRec(boardRec, lightblue);
@@ -81,7 +81,7 @@ while (!Raylib.WindowShouldClose())
             bollmovment.Y = -bollmovment.Y;
         }
 
-        foreach (var item in blocks)//kollar kollision med "item" akarectanglarna, om det sker så försvinner just den.
+        foreach (var item in blocks)//kollar kollision med "item" aka rectanglarna, om det sker så försvinner just den rektegneln den stutsade på
         {
             if (Raylib.CheckCollisionCircleRec(bollPosition, 10, item))
             {
@@ -91,12 +91,13 @@ while (!Raylib.WindowShouldClose())
             }
         }
 
-        if (blocks.Count==0){ //om alla block försvinner så går det över till "Win" scenen
+        if (blocks.Count == 0)  //om alla block försvinner så går det över till "Win" scenen
+        {
             scene = "Win";
         }
         
 
-        if (bollPosition.Y > 600)  //tappar ett liv
+        if (bollPosition.Y > 600)  //tappar ett liv om pollen över stigern y=600
         {
             life -= 1;
         }
@@ -111,6 +112,7 @@ while (!Raylib.WindowShouldClose())
 
 
     }
+
     else if (scene == "Win")
     {
         Raylib.DrawText("YOU WON!", 250, 280, 50, Color.RED);   
@@ -133,20 +135,3 @@ static Vector2 Movement(Vector2 movement)
 
     return movement;
 }
-
-// Rectangle plattan = new Rectangle (10, 10 , 50, 20);
-// Raylib.DrawRectangleRec(plattan, Color.SKYBLUE);
-
-
-// eller 30, 144, 255, 1 
-
-// Rectangle plattanRec = new Rectangle(760, 20, 32, 32);
-
-
-//Raylib.DrawCirle(100, 100, 100, Color.White);
-
-//List<Rectangle> rects = new List<Rectangle>();
-
-
-
-// Console.ReadLine();

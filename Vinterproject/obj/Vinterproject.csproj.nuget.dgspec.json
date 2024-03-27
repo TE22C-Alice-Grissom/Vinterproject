@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj": {}
+    "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj": {}
   },
   "projects": {
-    "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj": {
+    "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
+        "projectUniqueName": "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
         "projectName": "Vinterproject",
-        "projectPath": "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
+        "projectPath": "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\Vinterproject.csproj",
         "packagesPath": "C:\\Users\\alice.grissom\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\obj\\",
+        "outputPath": "C:\\Users\\alice.grissom\\Pictures\\2022-08\\Programmering\\Vinterproject\\Vinterproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
